@@ -47,10 +47,11 @@ var (
 // IsSystemEvent reports whether the "event" is a system event,
 // OnNamespaceConnect, OnNamespaceConnected, OnNamespaceDisconnect,
 // OnRoomJoin, OnRoomJoined, OnRoomLeave and OnRoomLeft.
+// To accommodate NativeMessage messages, add OnNativeMessage by chl0000 2023-12-1 15:34:51
 func IsSystemEvent(event string) bool {
 	switch event {
 	case OnNamespaceConnect, OnNamespaceConnected, OnNamespaceDisconnect,
-		OnRoomJoin, OnRoomJoined, OnRoomLeave, OnRoomLeft:
+		OnRoomJoin, OnRoomJoined, OnRoomLeave, OnRoomLeft, OnNativeMessage:
 		return true
 	default:
 		return false
